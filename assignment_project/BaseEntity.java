@@ -1,5 +1,7 @@
 package assignment_project;
 
+import java.util.ArrayList;
+
 public class BaseEntity {
     public long id;
     public String title;
@@ -64,4 +66,5 @@ public class BaseEntity {
     public void setDayPost(String dayPost) {
         this.dayPost = dayPost;
     }
+
 }
