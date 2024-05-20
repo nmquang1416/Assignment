@@ -25,7 +25,7 @@ public class FunctionController implements FunctionUtility{
 
                 if (setID.trim().isEmpty()) {
                     invalid = false;
-                    System.out.println("Invalid name");
+                    System.out.println("Invalid id");
                 } else {
                     dataCollect.setId(Long.parseLong(setID));
                     invalid= true;
@@ -38,7 +38,7 @@ public class FunctionController implements FunctionUtility{
 
                 if (setTitle.trim().isEmpty()) {
                     invalid = false;
-                    System.out.println("Invalid name");
+                    System.out.println("Invalid title");
                 } else {
                     dataCollect.setTitle(setTitle);
                     invalid= true;
@@ -50,7 +50,7 @@ public class FunctionController implements FunctionUtility{
                 String setDescript = scanner.nextLine();
                 if (setDescript.trim().isEmpty()) {
                     invalid = false;
-                    System.out.println("Invalid name");
+                    System.out.println("Invalid descript");
                 } else {
                     dataCollect.setDescript(setDescript);
                     invalid= true;
@@ -62,7 +62,7 @@ public class FunctionController implements FunctionUtility{
                 String setAvatar = scanner.nextLine();
                 if (setAvatar.trim().isEmpty()) {
                     invalid = false;
-                    System.out.println("Invalid name");
+                    System.out.println("Invalid avatar");
                 } else {
                     dataCollect.setAvatar(setAvatar);
                     invalid= true;
@@ -74,7 +74,7 @@ public class FunctionController implements FunctionUtility{
                 String setContent = scanner.nextLine();
                 if (setContent.trim().isEmpty()) {
                     invalid = false;
-                    System.out.println("Invalid name");
+                    System.out.println("Invalid Content");
                 } else {
                     dataCollect.setContent(setContent);
                     invalid= true;
@@ -86,7 +86,7 @@ public class FunctionController implements FunctionUtility{
                 String setAuthor = scanner.nextLine();
                 if (setAuthor.trim().isEmpty()) {
                     invalid = false;
-                    System.out.println("Invalid name");
+                    System.out.println("Invalid Author");
                 } else {
                     dataCollect.setAuthor(setAuthor);
                     invalid= true;
@@ -98,7 +98,7 @@ public class FunctionController implements FunctionUtility{
                 String setDayPost = scanner.nextLine();
                 if (setDayPost.trim().isEmpty()) {
                     invalid = false;
-                    System.out.println("Invalid name");
+                    System.out.println("Invalid Day Post");
                 } else {
                     dataCollect.setDayPost(setDayPost);
                     invalid= true;
