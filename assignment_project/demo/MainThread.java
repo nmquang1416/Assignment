@@ -1,9 +1,11 @@
 package assignment_project.demo;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainThread {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         //tao ra mot array list Student dung de chua danh sach sinh vien
         ArrayList<Student> danhSachSinhVien = new ArrayList<Student>();
         //Tao ra doi tuong cu the cua lop Student.
@@ -20,9 +22,15 @@ public class MainThread {
         danhSachSinhVien.add(st5);
 
         //Tao bien de luu index cua phan tu tim duoc
-        int searchIndex = -1;
+
+        int searchIndex = 0;
         //Tao bien luu tu khoa tim kiem
-        long searchKey = 15;// tim sinh vien co id = 15
+
+        System.out.println("nhap thong search id: ");
+        int searchKey = scanner.nextInt();
+
+//        long searchKey = 10;// tim sinh vien co id = 15
+
         //foreach, duyet qua cac phan tu cua list
         for (int i = 0; i < danhSachSinhVien.size(); i++) {
             //lay ra phan tu tai index thu i.
@@ -30,11 +38,16 @@ public class MainThread {
             //so sanh neu trung voi tu khoa
             if (student.getId() == searchKey) {
                 //luu lai index cua phan tu
-                searchIndex = i;
-                System.out.println(searchIndex);
+                danhSachSinhVien.remove(danhSachSinhVien.get(i));
+                System.out.println("done");
+//                searchIndex = i;
+//                System.out.println(student.getId());
+//                System.out.println(student.getLastName());
+//                System.out.println(student.getFirstName());
             }
             //gan gia tri ra bien name va in ra
-            System.out.printf("Student" + student.getId(), student.getLastName(),student.getFirstName());
+//            System.out.printf("Student" + student.getId(), student.getLastName(),student.getFirstName());
         }
+        System.out.println(danhSachSinhVien);
     }
 }
