@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class FunctionController implements FunctionUtility{
     ArrayList<BaseEntity> dataList = new ArrayList<>();
-    BaseEntity dataCollect = new BaseEntity();
     Scanner scanner = new Scanner(System.in);
 
     //1. chuc nang them
@@ -15,6 +14,8 @@ public class FunctionController implements FunctionUtility{
         System.out.println("------------------------------------");
         int choice =0;
         do {
+            BaseEntity dataCollect = new BaseEntity();
+
             System.out.println("Input id:");
             dataCollect.setId(scanner.nextLong());
             scanner.nextLine();
@@ -49,9 +50,14 @@ public class FunctionController implements FunctionUtility{
     @Override
     public void showPost() {
         for (int i = 0; i < dataList.size(); i++) {
-            System.out.println("Your staff infomation with id:" );
+            System.out.println("Your staff infomation with id:" + dataList.get(i).getId());
             System.out.println("------------------------------------");
-
+            System.out.println("Title:" + dataList.get(i).getTitle());
+            System.out.println("Descript:" + dataList.get(i).getDescript());
+            System.out.println("Avatar:" + dataList.get(i).getAvatar());
+            System.out.println("Content:" + dataList.get(i).getContent());
+            System.out.println("Day Post:" + dataList.get(i).getDayPost());
+            System.out.println("------------------------------------");
         }
     }
     //3. chuc nang search
