@@ -67,25 +67,22 @@ public class FunctionController implements FunctionUtility{
     public void searchPost() {
         BaseEntity post = new BaseEntity();
         int choice =0;
-
-        System.out.println("please, choice one search option");
-        System.out.println("------------------------------------");
-        System.out.println("[1]. Search by id");
-        System.out.println("[2]. Search by title");
-        System.out.println("[3]. Search by Author");
-        System.out.println("[4]. Exit");
-        System.out.println("------------------------------------");
-        choice = scanner.nextInt();
-        scanner.nextLine();
-
         do {
+            System.out.println("please, choice one search option");
+            System.out.println("------------------------------------");
+            System.out.println("[1]. Search by id");
+            System.out.println("[2]. Search by title");
+            System.out.println("[3]. Search by Author");
+            System.out.println("[4]. Exit");
+            System.out.println("------------------------------------");
+            choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice){
                 case 1:
                     //1. tim theo ID
                     System.out.println("Please, enter id: ");
                     System.out.println("------------------------------------");
                     long searchId = scanner.nextLong();
-
                     for (int i = 0; i < dataList.size(); i++) {
                         post = dataList.get(i);
                         if (post.getId()==searchId) {
@@ -96,8 +93,10 @@ public class FunctionController implements FunctionUtility{
                             System.out.println("Post content:" + post.getContent());
                             System.out.println("Post author:" + post.getAuthor());
                             System.out.println("Post day post:" + post.getDayPost());
+                            System.out.println("------------------------------------");
                         } else {
                             System.out.println("isvalid id");
+                            System.out.println("------------------------------------");
                         }
                     }
                     break;
@@ -150,8 +149,8 @@ public class FunctionController implements FunctionUtility{
                     break;
             }
         } while (choice!=4);
-
         //4. tim theo chu cai
+
     }
 
     //4. chuc nang xoa
