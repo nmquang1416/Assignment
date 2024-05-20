@@ -17,28 +17,93 @@ public class FunctionController implements FunctionUtility{
         int choice =0;
         do {
             BaseEntity dataCollect = new BaseEntity();
+            boolean invalid = false;
 
-            System.out.println("Input id:");
-            dataCollect.setId(scanner.nextLong());
-            scanner.nextLine();
+            do {
+                System.out.println("Input id:");
+                String setID = scanner.nextLine();
 
-            System.out.println("Input title:");
-            dataCollect.setTitle(scanner.nextLine());
+                if (setID.trim().isEmpty()) {
+                    invalid = false;
+                    System.out.println("Invalid name");
+                } else {
+                    dataCollect.setId(Long.parseLong(setID));
+                    invalid= true;
+                }
+            } while (!invalid);
 
-            System.out.println("Input descript:");
-            dataCollect.setDescript(scanner.nextLine());
+            do {
+                System.out.println("Input title:");
+                String setTitle = scanner.nextLine();
 
-            System.out.println("Input avatar: ");
-            dataCollect.setAvatar(scanner.nextLine());
+                if (setTitle.trim().isEmpty()) {
+                    invalid = false;
+                    System.out.println("Invalid name");
+                } else {
+                    dataCollect.setTitle(setTitle);
+                    invalid= true;
+                }
+            } while (!invalid);
 
-            System.out.println("Input content: ");
-            dataCollect.setContent(scanner.nextLine());
+            do {
+                System.out.println("Input descript:");
+                String setDescript = scanner.nextLine();
+                if (setDescript.trim().isEmpty()) {
+                    invalid = false;
+                    System.out.println("Invalid name");
+                } else {
+                    dataCollect.setDescript(setDescript);
+                    invalid= true;
+                }
+            } while (!invalid);
 
-            System.out.println("Input Author:");
-            dataCollect.setAuthor(scanner.nextLine());
+            do {
+                System.out.println("Input avatar: ");
+                String setAvatar = scanner.nextLine();
+                if (setAvatar.trim().isEmpty()) {
+                    invalid = false;
+                    System.out.println("Invalid name");
+                } else {
+                    dataCollect.setAvatar(setAvatar);
+                    invalid= true;
+                }
+            } while (!invalid);
 
-            System.out.println("Input Day Post:");
-            dataCollect.setDayPost(scanner.nextLine());
+            do {
+                System.out.println("Input content: ");
+                String setContent = scanner.nextLine();
+                if (setContent.trim().isEmpty()) {
+                    invalid = false;
+                    System.out.println("Invalid name");
+                } else {
+                    dataCollect.setContent(setContent);
+                    invalid= true;
+                }
+            } while (!invalid);
+
+            do {
+                System.out.println("Input Author:");
+                String setAuthor = scanner.nextLine();
+                if (setAuthor.trim().isEmpty()) {
+                    invalid = false;
+                    System.out.println("Invalid name");
+                } else {
+                    dataCollect.setAuthor(setAuthor);
+                    invalid= true;
+                }
+            } while (!invalid);
+
+            do {
+                System.out.println("Input Day Post: ");
+                String setDayPost = scanner.nextLine();
+                if (setDayPost.trim().isEmpty()) {
+                    invalid = false;
+                    System.out.println("Invalid name");
+                } else {
+                    dataCollect.setDayPost(setDayPost);
+                    invalid= true;
+                }
+            } while (!invalid);
 
             dataList.add(dataCollect);
             System.out.println("Do you want continues import data?");
@@ -67,6 +132,7 @@ public class FunctionController implements FunctionUtility{
     public void searchPost() {
         BaseEntity post = new BaseEntity();
         int choice =0;
+
         do {
             System.out.println("please, choice one search option");
             System.out.println("------------------------------------");
@@ -77,6 +143,7 @@ public class FunctionController implements FunctionUtility{
             System.out.println("------------------------------------");
             choice = scanner.nextInt();
             scanner.nextLine();
+
             switch (choice){
                 case 1:
                     //1. tim theo ID
@@ -95,7 +162,7 @@ public class FunctionController implements FunctionUtility{
                             System.out.println("Post day post:" + post.getDayPost());
                             System.out.println("------------------------------------");
                         } else {
-                            System.out.println("isvalid id");
+                            System.out.println("invalid id");
                             System.out.println("------------------------------------");
                         }
                     }
@@ -117,7 +184,7 @@ public class FunctionController implements FunctionUtility{
                             System.out.println("Post author:" + post.getAuthor());
                             System.out.println("Post day post:" + post.getDayPost());
                         } else {
-                            System.out.println("isvalid Title");
+                            System.out.println("invalid Title");
                         }
                     }
                     break;
@@ -137,7 +204,7 @@ public class FunctionController implements FunctionUtility{
                             System.out.println("Post author:" + post.getAuthor());
                             System.out.println("Post day post:" + post.getDayPost());
                         } else {
-                            System.out.println("isvalid Author");
+                            System.out.println("invalid Author");
                         }
                     }
                     break;
@@ -165,13 +232,13 @@ public class FunctionController implements FunctionUtility{
                 dataList.remove(dataList.get(i));
                 System.out.println("Remove done");
             } else {
-                System.out.println("isvalid id");
+                System.out.println("invalid id");
             }
         }
 
     }
 
-    //5. chuc nang in
+    //5. chuc nang in thong tin
     public void showInfomation(){
         System.out.println("Post id:" + post.getId());
         System.out.println("Post title:" + post.getTitle());
@@ -180,5 +247,17 @@ public class FunctionController implements FunctionUtility{
         System.out.println("Post content:" + post.getContent());
         System.out.println("Post author:" + post.getAuthor());
         System.out.println("Post day post:" + post.getDayPost());
+    }
+
+    //6.chuc nang validate
+    public void validateInput(String setValue){
+        BaseEntity dataCollect = new BaseEntity();
+        if (setValue.trim().isEmpty()) {
+            boolean invalid = false;
+            System.out.println("Invalid name");
+        } else {
+            dataCollect.setTitle(setValue);
+            boolean invalid= true;
+        }
     }
 }

@@ -1,0 +1,9 @@
+if (dataCollect.setTitle(String.valueOf(scanner.nextLine().trim().isEmpty()))) {
+//                    System.out.println("Invalid name");
+//                } else {
+//                    invalid= true;
+//                    dataCollect.setTitle(scanner.nextLine());
+//                }
+
+-----------------------------
+validate nhung viet kho hieu hon

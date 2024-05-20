@@ -1,7 +1,5 @@
 package assignment_project;
 
-import java.util.ArrayList;
-
 public class BaseEntity {
     public long id;
     public String title;
@@ -23,8 +21,9 @@ public class BaseEntity {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String setTitle(String title) {
+        return this.title = title;
+
     }
 
     public String getDescript() {
